@@ -18,10 +18,10 @@ const Search = ({handleSearch}) => {
         <nav className="navbar">
             <h2 className="title">TheMovies</h2>
             <div className="searchcontrol">
-            <form onSubmit={(e) => handleSubmit(e)}>
-            <input type="text" id="search" className="searchinput" value={search} onChange={handleChange} autoComplete="off" placeholder="Search" />
-                <BiSearchAlt2 />
-            </form>
+                <form onSubmit={handleSubmit} >
+                    <input type="search" id="search" className="searchinput" value={search} onChange={handleChange}  autoComplete="off" placeholder="Search" />
+                    <BiSearchAlt2 />
+                </form>
             </div>
         </nav>
     )
