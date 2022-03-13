@@ -19,6 +19,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+.toptext {
+  min-height: 150px;
+}
 ::selection {
   background: #f00;
   color: #fff;
