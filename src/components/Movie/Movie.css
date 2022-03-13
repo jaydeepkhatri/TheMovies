@@ -1,0 +1,50 @@
+.movie {
+    position: relative;
+    overflow: hidden;
+}
+.cover img {
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.movie .info {
+    position: absolute;
+    padding: 12px;
+    bottom: -60%;
+    transition: 0.2s;
+}
+.cover::before {
+    transition: 0.2s;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+}
+.movie:hover .cover::before {
+    background: rgba(0,0,0,0.8);
+}
+.movie:hover .info {
+    bottom: 0;
+}
+.movie .title {
+    font-size: 18px;
+    font-weight: 700;
+}
+.movie .overview {
+    color: #CCC;
+    font-size: 14px;
+}
+.movie .title,
+.movie .overview {
+    margin-bottom: 8px;
+}
+.rating {
+    display: flex;
+    align-items: center;
+}
+.rating svg {
+    color: #f8b704;
+    margin-right: 4px;
+}

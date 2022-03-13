@@ -1,13 +1,30 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: rgb(53,73,85);
+  background: radial-gradient(circle, rgb(12, 15, 17) 59%, rgb(0, 0, 0) 100%);
+  background-attachment: fixed;
+  color: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+}
+.moviesgrid {
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+::selection {
+  background: #f00;
+  color: #fff;
+}
+@media (max-width: 600px) {
+  .moviesgrid {
+    padding: 0 12px;
+  }
 }
