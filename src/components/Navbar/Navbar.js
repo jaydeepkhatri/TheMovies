@@ -18,7 +18,9 @@ const Search = ({handleSearch}) => {
         <nav className="navbar">
             <h2 className="title">TheMovies</h2>
             <div className="searchcontrol">
-                <input type="search" id="search" className="searchinput" value={search} onChange={handleChange} onSubmit={handleSubmit}   autoComplete="off" placeholder="Search" />
+                <form onSubmit={handleSubmit} >
+                    <input type="search" id="search" className="searchinput" value={search} onChange={handleChange}  autoComplete="off" placeholder="Search" />
+                </form>
                 <BiSearchAlt2 />
             </div>
         </nav>
