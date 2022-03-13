@@ -17,6 +17,14 @@
         margin-top: 12px;
     }
 }
+.title a{
+    color: #fff;
+    text-decoration: none;
+    transition: 0.1s;
+}
+.title a:hover {
+    color: rgb(235, 74, 0);
+}
 .searchcontrol {
     display: flex;
     align-items: center;

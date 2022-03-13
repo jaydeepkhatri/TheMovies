@@ -1,7 +1,6 @@
 import { Movie, Navbar } from "./components";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import background from "./assets/img/background.jpg";
 
 
 
@@ -11,8 +10,7 @@ const search_API = "https://api.themoviedb.org/3/search/movie";
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [genre, setGenre] = useState([]);
-  const [topText, setTopText] = useState("Showing popular movies")
+  const [topText, setTopText] = useState("")
 
   useEffect(() => {
     axios.get(API,{
@@ -35,6 +33,7 @@ function App() {
       })
         .then(res => {
           setMovies(res.data.results);
+          setTopText("Search result: " + search)
         });
   }
 
@@ -42,9 +41,8 @@ function App() {
     <>
       <Navbar handleSearch={searchMovie} />
       
-      <div className="toptext" style={{ backgroundImage: `url(${background})` }}>{topText}</div>
+      <div className="toptext">{topText}</div>
       <div className="moviesgrid" >
-
         {
           movies.map((movie) => (
             <Movie key={movie.id} {...movie} />

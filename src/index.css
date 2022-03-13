@@ -21,6 +21,14 @@ body {
 }
 .toptext {
   min-height: 150px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("./assets/img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 40px;
 }
 ::selection {
   background: #f00;
