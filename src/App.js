@@ -17,27 +17,19 @@ function App() {
       .then(res => {
         setMovies(res.data.results);
       });
-
-
-    // axios.get("https://api.themoviedb.org/3/genre/movie/list?api_key=7cfc85516ca2247cf6e74cb94dc31857")
-    //   .then(result => {
-    //     setGenre(result.data.genres);
-    //   });
   }, []);
   
   const searchMovie = (search) => {
-    useEffect(() => {
       axios.get(search_API + search)
         .then(res => {
           setMovies(res.data.results);
         });
-      }, []);
   }
 
   return (
     <>
-      <Navbar />
-      <div className="moviesgrid" handleSearch={searchMovie}>
+      <Navbar  handleSearch={searchMovie} />
+      <div className="moviesgrid">
 
         {
           movies.map((movie) => (
