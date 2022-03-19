@@ -24,7 +24,6 @@ const Movieinfo = () => {
             .then(res => {
             setMovieInfo(res.data);
             setLoading(false);
-            console.log(res.data)
             });
     },[]);
 
@@ -35,26 +34,26 @@ const Movieinfo = () => {
             <BiLoaderAlt />
         </div>
         :
-        <div className="movieinfo">
-            <div className="image">
-                <img src={`https://image.tmdb.org/t/p/w1280${movieInfo.backdrop_path}`} />
-            </div>
-            <div className="info">
-                <h2 className="title">{movieInfo.original_title}</h2>
-                <p className="tagline">{movieInfo.tagline}</p>
-                <p className="mt14">{movieInfo.overview}</p>
-                <div className="genres">
-                    {
-                        movieInfo.genres.map((genre) => {
-                            <span className="genre" key={genre.id}>{genre.name}</span>
-                        })
-                    }
+        <>
+            <img className="movieimg" alt={movieInfo.original_title} src={`https://image.tmdb.org/t/p/w1280${movieInfo.backdrop_path}`} />
+            <div className="movieinfo">
+                <div className="info">
+                    <h2 className="title">{movieInfo.original_title}</h2>
+                    <p className="tagline">{movieInfo.tagline}</p>
+                    <p className="mt14">{movieInfo.overview}</p>
+                    <div className="genres">
+                        {
+                            movieInfo.genres.map((genre) => {
+                                <span className="genre" key={genre.id}>{genre.name}</span>
+                            })
+                        }
+                    </div>
+                    <p className="vote"><AiFillStar /> &nbsp;{movieInfo.vote_average} / 10</p>
+                    <p className="mt14">Release Date: {movieInfo.release_date}</p>
+                    <a href={movieInfo.homepage} className="visibtn" target="_blank">Visit their website <BiLinkExternal /></a>
                 </div>
-                <p className="vote"><AiFillStar /> {movieInfo.vote_average} / 10</p>
-                <p className="mt14">Release Date: {movieInfo.release_date}</p>
-                <a href={movieInfo.homepage} className="visibtn" target="_blank">Visit their website <BiLinkExternal /></a>
             </div>
-        </div>
+        </>
     )
 }
 
