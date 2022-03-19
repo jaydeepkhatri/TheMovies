@@ -1,0 +1,45 @@
+.movieinfo {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 40px auto;
+}
+.movieinfo img {
+    width: 100%;
+}
+.movieinfo .info {
+    margin-top: 20px;
+}
+.movieinfo .info .title {
+    font-size: 48px;
+}
+.movieinfo .info .tagline{
+    color: #aaa;
+}
+.mt14 {
+    margin-top: 14px;
+}
+.visibtn {
+    margin-top: 20px;
+    background: rgb(255, 0, 64);
+    color: #fff;
+    border: 2px solid rgb(255, 0, 64);
+    padding: 10px 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 24px;
+    display: inline-block;
+    transition: 0.1s;
+}
+.visibtn:hover{
+    background: inherit;
+    color:#fff;
+}
+.vote {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.vote svg{
+    color: #f8b704;
+}

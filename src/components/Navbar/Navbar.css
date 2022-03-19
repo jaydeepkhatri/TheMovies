@@ -109,7 +109,7 @@ input:checked + .slider:before {
 
 /* Dark Theme*/
 .light-theme .navbar {
-  background: #FFF;
+  background: #eee;
   color: #222;
   transition: 1s;
 }

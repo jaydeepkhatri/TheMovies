@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import {BiSearchAlt2} from "react-icons/bi";
 import { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
 
 const Search = ({handleSearch}) => {
     const [search, setSearch] = useState("");
@@ -26,7 +27,7 @@ const Search = ({handleSearch}) => {
 
     return (
         <nav className="navbar">
-            <h2 className="title"><a href="/">TheMovies</a></h2>
+            <h2 className="title"><Link to="/">TheMovies</Link></h2>
             <div className="searchcontrol">
                 <label className="switch">
                     <input type="checkbox" onClick={handleTheme}/>
