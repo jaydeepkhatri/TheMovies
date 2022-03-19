@@ -2,15 +2,21 @@
     position: relative;
     overflow: hidden;
 }
-.cover img {
-    width: 100%;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
 .movie .info {
     position: absolute;
     padding: 12px;
     bottom: -60%;
     transition: 0.2s;
+}
+.cover {
+    object-fit: cover;
+    height: 100%;
+}
+.cover img {
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    object-fit: cover;
+    min-height: 100%;
 }
 .cover::before {
     transition: 0.2s;
@@ -30,6 +36,7 @@
 }
 .movie .title {
     font-size: 18px;
+    color: #FFF;
     font-weight: 700;
 }
 .movie .overview {
@@ -43,6 +50,7 @@
 .rating {
     display: flex;
     align-items: center;
+    color: #eee;
 }
 .rating svg {
     color: #f8b704;
