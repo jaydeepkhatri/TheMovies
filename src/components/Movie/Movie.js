@@ -17,7 +17,7 @@ const Movie = ({id, title, vote_average, overview,poster_path}) => {
         <div className="info">
           <p className="title">{title}</p>
           <p className="overview">{truncate(overview, 20)}... </p>
-          <span className="rating"><AiFillStar /> {vote_average}</span>
+          <span className="rating"><AiFillStar /> {vote_average.toFixed(1)}</span>
         </div>
       </Link>
     );

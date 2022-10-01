@@ -1,6 +1,7 @@
 .movie {
     position: relative;
     overflow: hidden;
+    max-width: 350px;
 }
 .movie .info {
     position: absolute;

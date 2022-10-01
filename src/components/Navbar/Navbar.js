@@ -35,7 +35,7 @@ const Search = ({handleSearch}) => {
                 </label>
                 <form onSubmit={handleSubmit} >
                     <input type="search" id="search" className="searchinput" value={search} onChange={handleChange}  autoComplete="off" placeholder="Search" />
-                    <BiSearchAlt2 />
+                    <button type="submit"><BiSearchAlt2 /></button>
                 </form>
             </div>
         </nav>

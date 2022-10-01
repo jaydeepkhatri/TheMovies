@@ -38,13 +38,14 @@
     background: inherit;
     color: #DDD;
     border: none;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid rgb(198, 198, 198);
     padding: 4px 8px;
     margin-left: 4px;
     outline: none;
 }
-.navbar input:active {
-    border-bottom: 2px solid #777;
+.navbar input:active,
+.navbar input:focus {
+    border-bottom: 2px solid rgb(255, 0, 64);
 }
 
 /*From w3Schools*/
@@ -87,11 +88,11 @@
 }
 
 input:checked + .slider {
-  background-color: #f3d421;
+  background-color: rgb(255, 0, 64);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #f3d421;
+  box-shadow: 0 0 1px rgb(255, 0, 64) ;
 }
 
 input:checked + .slider:before {
@@ -99,19 +100,19 @@ input:checked + .slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
-.slider.round {
+/* .slider.round {
   border-radius: 34px;
 }
 
 .slider.round:before {
   border-radius: 50%;
-}
+} */
 
 /* Dark Theme*/
 .light-theme .navbar {
   background: #eee;
   color: #222;
-  transition: 1s;
+  transition: 0.5s;
 }
 .light-theme .navbar a {
   color: #000;

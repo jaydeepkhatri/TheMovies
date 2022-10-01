@@ -30,7 +30,7 @@ const Movieinfo = () => {
 
     return(
         loading ?
-        <div classame="loader">
+        <div className="loader">
             <BiLoaderAlt />
         </div>
         :
@@ -48,7 +48,7 @@ const Movieinfo = () => {
                             })
                         }
                     </div>
-                    <p className="vote"><AiFillStar /> &nbsp;{movieInfo.vote_average} / 10</p>
+                    <p className="vote"><AiFillStar /> &nbsp;{movieInfo.vote_average.toFixed(1)} / 10</p>
                     <p className="mt14">Release Date: {movieInfo.release_date}</p>
                     <a href={movieInfo.homepage} className="visibtn" target="_blank">Visit their website <BiLinkExternal /></a>
                 </div>

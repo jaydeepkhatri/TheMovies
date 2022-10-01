@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs"
+import { BiLoaderAlt } from "react-icons/bi";
 
 
 
@@ -17,7 +18,7 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [topText, setTopText] = useState("Top Movies");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios.get(API, {
@@ -30,6 +31,7 @@ function App() {
       .then(res => {
         setMovies(res.data.results);
         setTotalPages(res.data.total_pages);
+        setLoading(false);
       });
   }, [page]);
 
@@ -43,26 +45,32 @@ function App() {
     })
       .then(res => {
         setMovies(res.data.results);
-        setTopText("Search result: " + search)
+        setLoading(false);
       });
   }
 
   const downpage = () => {
     if (!(page <= 1)) {
       setPage(page - 1);
+      setLoading(true);
     }
   }
 
   const uppage = () => {
     if (!(page >= totalPages)) {
       setPage(page + 1);
+      setLoading(true);
     }
   }
 
   function Home() {
     return (
+      loading ?
+        <div className="loader">
+            <BiLoaderAlt />
+        </div>
+        :
       <>
-        <div className="toptext">{topText}<span className="toptextpage">Page: {page}</span></div>
         <div className="moviesgrid" >
           {
             movies.map((movie) => (
@@ -84,7 +92,7 @@ function App() {
   }
 function Test() {
   return (
-    <h1>sadsd</h1>
+    <h1>This is a movie Component</h1>
   )
 }
 function Lost() {

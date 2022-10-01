@@ -5,7 +5,6 @@
 }
 body {
   background: #020608;
-  /* background: radial-gradient(circle, rgb(12, 15, 17) 59%, rgb(0, 0, 0) 100%); */
   background-attachment: fixed;
   color: #fff;
   font-family: 'Roboto Condensed', sans-serif;
@@ -13,36 +12,30 @@ body {
   transition: 0.5s;
 }
 .moviesgrid {
-  padding: 0 28px;
+  padding: 60px 28px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 8px;
   max-width: 1200px;
   margin: 0 auto;
 }
-.toptext {
-  min-height: 150px;
-  color: #fff;
-  text-align: center;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("./assets/img/background.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column ;
-  font-size: 24px;
-  margin-bottom: 40px;
-}
-.toptextpage {
-  margin-top: 12px;
-  font-size: 16px;
-  color: #BBB;
-}
 ::selection {
   background: #f00;
   color: #fff;
 }
+.loader {
+  padding: 40px;
+  text-align: center;
+}
+.loader svg {
+  font-size: 60px;
+  color: rgb(255, 0, 64);
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  100% { transform: rotate(1turn);}
+}
+
 @media (max-width: 600px) {
   .moviesgrid {
     padding: 0 12px;
@@ -61,4 +54,7 @@ body {
   width: 32px;
   height: 32px;
   padding: 8px;
+  border: 2px solid rgb(255, 0, 64);
+  background: rgb(44, 44, 44);
+  color: white;
 }
