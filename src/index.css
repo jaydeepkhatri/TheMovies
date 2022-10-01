@@ -57,4 +57,5 @@ body {
   border: 2px solid rgb(255, 0, 64);
   background: rgb(44, 44, 44);
   color: white;
+  cursor: pointer;
 }
